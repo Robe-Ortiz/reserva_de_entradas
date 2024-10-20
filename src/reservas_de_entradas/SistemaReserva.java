@@ -31,9 +31,8 @@ public class SistemaReserva {
 	}
 	
 	public boolean reservar(String nombreEvento, int cantidadDeEntradasParaReservar) {	
-		String nombreEventoCopy = nombreEvento.toLowerCase();
-		Evento evento = eventos.get(nombreEventoCopy);
-		if(evento == null) {
+		String nombreEventoCopy = nombreEvento.toLowerCase();		
+		if(!eventoExiste(nombreEventoCopy)) {
 			return false;
 		}		
 		return eventos.get(nombreEventoCopy).reservarEntradas(cantidadDeEntradasParaReservar);
